@@ -42,3 +42,9 @@
     font-size: 60px;
     font-weight: bold;
 }
+
+.paragraph span {
+
+    color: rgb(235, 58, 88);
+    font-weight: bold;
+}
