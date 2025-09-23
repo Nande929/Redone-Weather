@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="src/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
 </head>
 <body>
     
@@ -13,27 +14,34 @@
 
         <header>
 
-            <form action="" class="search-form">
+            <form action="" class="search-form" id="search-form">
 
-                <input type="text" class="search-form-input" placeholder="Enter City...">
-                <input type="submit" value="Search" class="search-form-submit">
+                <input type="text" class="search-form-input" id="search-form-input" placeholder="Enter City...">
+                <input type="submit" value="Search" class="search-form-submit" id="search-form-submit">
             </form>
         </header>
 
         <div class="city-weather">
 
-            <h2>Paris</h2>
+            <h2 id="cityName">Paris</h2>
 
             <div class="city-temperature">
 
                 <img src="images/icon-partly-cloudy.webp" alt="">
-                <span>12&deg;C</span>
+                <span id="temp">12&deg;C</span>
             </div>
         </div>
 
-        <p class="paragraph">Tuesday 14:49, scattered clouds <br>
+        <p class="paragraph"><span id="myDate">Tuesday 14:49</span>, scattered clouds <br>
         Humidity: <span>66%</span>, Wind: <span>3.13km/h</span>
         </p>
+
+        <hr>
+
+        <footer>
+
+            <p>This was coded by <a href="#">Nande Nqetho</a> and available on <a href="#">Github</a> and hosted on <a href="#">Netlify</a></p>
+        </footer>
     </div>
     <script src="src/index.js"></script>
 </body>
