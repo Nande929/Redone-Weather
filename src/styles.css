@@ -32,6 +32,12 @@
     justify-content: space-between;
 }
 
+.city-temperature {
+
+    display: flex;
+    align-items: center;
+}
+
 .city-temperature img {
 
     width: 50px;
@@ -41,6 +47,12 @@
 
     font-size: 50px;
     font-weight: bold;
+}
+
+#image-icon img{
+
+    width: 80px;
+    
 }
 
 #myDate {
