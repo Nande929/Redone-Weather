@@ -9,27 +9,49 @@
 
 .search-form-input {
 
-    width: 82%;
+    width: 85%;
     padding: 10px 15px;
     border: 1px solid transparent;
     background-color: #d1cfcf;
     border-radius: 4px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.search-form-input:hover {
+
+    background-color: #bbbaba;
+}
+
+.search-form-input:focus {
+
+    background-color: #d1cfcf;
+    border: 2px solid rgb(147, 147, 161);
+    
+
 }
 
 .search-form-submit {
 
-    padding: 10px 15px;
+    padding: 10px 20px;
     background-color: rgb(235, 58, 88);
     border: none;
     color: #fff;
     border-radius: 4px;
+    cursor: pointer;
+    transition: opacity 0.15s;
 }
 
+.search-form-submit:hover {
+
+    opacity: 0.9;
+}
 .city-weather {
 
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 15px;
 }
 
 .city-temperature {
@@ -68,12 +90,19 @@
 
 .paragraph {
 
-    margin: 0;
+    line-height: 1.5;
 }
 
 .city-weather h2 {
 
-    margin: 0;
+    margin: 0 0 10px 0;
+    font-size: 40px;
+}
+
+.city-details #weatherCondition {
+
+    color: #000;
+    font-weight: normal;
 }
 
 hr {
@@ -88,4 +117,14 @@ footer p {
 
     font-size: 14px;
     text-align: center;
+}
+
+footer a {
+
+    color: rgb(235, 58, 88);
+}
+
+footer a:hover {
+
+    color: rgb(203, 73, 95)
 }

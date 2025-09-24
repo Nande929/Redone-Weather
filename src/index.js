@@ -14,8 +14,8 @@ function showTemperature (response) {
     city.innerHTML = response.data.city;
     temperature.innerHTML = `${Math.round(response.data.temperature.current)}°C`;
     weatherCondition.innerHTML = response.data.condition.description;
-    humidity.innerHTML = `${response.data.temperature.humidity}`;
-    windSpeed.innerHTML = `${response.data.wind.speed}`;
+    humidity.innerHTML = `${response.data.temperature.humidity}%`;
+    windSpeed.innerHTML = `${response.data.wind.speed}km/H`;
     realDate.innerHTML = `${currentDate(date)}`;
     iconWeather.innerHTML = `<img src="${response.data.condition.icon_url}">` 
     

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title></title>
     <link rel="stylesheet" href="src/styles.css">
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
 </head>
@@ -23,7 +23,12 @@
 
         <div class="city-weather">
 
-            <h2 id="cityName">Paris</h2>
+           <div class="city-details">
+                <h2 id="cityName">Paris</h2>
+                <p class="paragraph"><span id="myDate"></span>, <span id="weatherCondition"></span> <br>
+                Humidity: <span id="humidity"></span>, Wind: <span id="wind-speed"></span>
+                </p>
+           </div>
 
             <div class="city-temperature">
 
@@ -32,9 +37,7 @@
             </div>
         </div>
 
-        <p class="paragraph"><span id="myDate"></span>, <span id="weatherCondition"></span> <br>
-        Humidity: <span id="humidity"></span>, Wind: <span id="wind-speed"></span>
-        </p>
+        
 
         <hr>
 
