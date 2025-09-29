@@ -66,6 +66,43 @@ function currentDate(date) {
     return `${wordedDays} ${hours}:${minutes}`
 }
 
+function iconVariation(index) {
+
+    let icon1 = "images/icon-overcast.webp";
+    let icon2 = "images/icon-rain.webp";
+    let icon3 = "images/icon-snow.webp";
+    let icon4 = "images/icon-storm.webp";
+    let icon5 = "images/icon-sunny.webp";
+
+    let iconArray = [icon1, icon2, icon3, icon4, icon5];
+    return iconArray[index % iconArray.length];
+    
+}
+
+function displayForecast() {
+    let daysWeek = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+    
+    let foreCastElement = "";
+
+    daysWeek.forEach(function (day, index) {
+
+        foreCastElement += `
+            <div class="weather-forecast">
+
+                <div class="day-of-the-week">${day}</div>
+                <img src="${iconVariation(index)}" alt="Overcast Icon" width="50px;">
+                <div class="temperature-container">
+                    <div>15&deg;</div>
+                    <div>9&deg;</div>
+                </div>
+            </div>
+        `
+    })
+
+    let foreCast = document.querySelector("#forecast-container");
+    foreCast.innerHTML = foreCastElement;
+}
 
 
+displayForecast();
 requestApi("Rome")

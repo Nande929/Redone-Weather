@@ -129,3 +129,35 @@ footer a:hover {
     color: rgb(203, 73, 95)
 }
 
+.weather-forecast .day-of-the-week {
+
+    text-align: center;
+}
+
+.weather-forecast img {
+
+    display: block;
+    margin: 0 auto;
+}
+
+
+.temperature-container {
+
+    display: flex;
+    justify-content: center;
+    
+}
+
+.temperature-container div {
+
+    color: rgb(209, 22, 93);
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+.forecast-container {
+
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
