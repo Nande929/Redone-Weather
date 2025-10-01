@@ -201,5 +201,10 @@ footer a:hover {
         gap: 20px;
     }
 
+    .forecast-container {
+
+        overflow-x: auto;
+    }
+
     
 }
