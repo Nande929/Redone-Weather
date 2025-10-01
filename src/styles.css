@@ -165,13 +165,41 @@ footer a:hover {
 
 @media all and (max-width: 500px) {
 
+    body {
+        
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        
+    }
     .container {
-
+        max-width: 100%;
+        margin: 0;
+        border-radius: 0;
+        padding: 10px;
+        box-shadow: none;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
         width: 100%;
+        overflow-x: hidden;
+ 
     }
 
-    .container button {
+    .container * {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
 
-        display: block;
     }
+    .city-weather {
+
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+        gap: 20px;
+    }
+
+    
 }
