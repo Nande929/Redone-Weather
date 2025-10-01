@@ -11,14 +11,15 @@ function showTemperature (response) {
     let iconWeather = document.querySelector("#image-icon");
 
 
-    city.innerHTML = response.data.city;
+    city.innerHTML = `${response.data.city}, ${response.data.country}`;
     temperature.innerHTML = `${Math.round(response.data.temperature.current)}°C`;
     weatherCondition.innerHTML = response.data.condition.description;
     humidity.innerHTML = `${response.data.temperature.humidity}%`;
     windSpeed.innerHTML = `${response.data.wind.speed}km/H`;
     realDate.innerHTML = `${currentDate(date)}`;
-    iconWeather.innerHTML = `<img src="${response.data.condition.icon_url}">` 
+    iconWeather.innerHTML = `<img src="${response.data.condition.icon_url}">`;
     
+    getForeCast(`${response.data.city}`);
 }
 
 function requestApi(city) {
@@ -66,37 +67,47 @@ function currentDate(date) {
     return `${wordedDays} ${hours}:${minutes}`
 }
 
-function iconVariation(index) {
+function getForeCast(city) {
 
-    let icon1 = "images/icon-overcast.webp";
-    let icon2 = "images/icon-rain.webp";
-    let icon3 = "images/icon-snow.webp";
-    let icon4 = "images/icon-storm.webp";
-    let icon5 = "images/icon-sunny.webp";
-
-    let iconArray = [icon1, icon2, icon3, icon4, icon5];
-    return iconArray[index % iconArray.length];
+    let apiKey = "e2b85d39ocbf2atcfebaabf3b2422057";
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
     
+
+    axios.get(apiUrl).then(displayForecast);
 }
 
-function displayForecast() {
-    let daysWeek = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+
+function displayDays(weekDays) {
+
+    let myDay = new Date(weekDays * 1000);
+    let daysWeek = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"]; 
+    return daysWeek[myDay.getDay()];
+}
+function displayForecast(response) {
+    console.log(response.data)
     
+
     let foreCastElement = "";
 
-    daysWeek.forEach(function (day, index) {
+    response.data.daily.forEach(function (day, index) {
+
+       if(index < 5) {
 
         foreCastElement += `
-            <div class="weather-forecast">
+            <div class="fore-cont">
+                <div class="weather-forecast">
 
-                <div class="day-of-the-week">${day}</div>
-                <img src="${iconVariation(index)}" alt="Overcast Icon" width="50px;">
+                <div class="day-of-the-week">${displayDays(day.time)}</div>
+                <img src="${day.condition.icon_url}" alt="Overcast Icon" width="50px;">
                 <div class="temperature-container">
-                    <div>15&deg;</div>
-                    <div>9&deg;</div>
+                    <div>${Math.round(day.temperature.maximum)}&deg;</div>
+                    <div>${Math.round(day.temperature.minimum)}&deg;</div>
                 </div>
             </div>
+            </div>
         `
+       }
+        
     })
 
     let foreCast = document.querySelector("#forecast-container");
@@ -104,5 +115,4 @@ function displayForecast() {
 }
 
 
-displayForecast();
 requestApi("Rome")

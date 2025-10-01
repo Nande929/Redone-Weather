@@ -141,6 +141,7 @@ footer a:hover {
 }
 
 
+
 .temperature-container {
 
     display: flex;
@@ -160,4 +161,17 @@ footer a:hover {
     display: flex;
     justify-content: space-evenly;
     margin-top: 30px;
+}
+
+@media all and (max-width: 500px) {
+
+    .container {
+
+        width: 100%;
+    }
+
+    .container button {
+
+        display: block;
+    }
 }
